@@ -205,7 +205,7 @@ extension EasyMention: UITextViewDelegate {
         }
         
         if isMentioning {
-            if text == " " || (text.count == 0 &&  self.mentionQuery == ""){ // If Space or delete the "@"
+            if text == "" || (text.count == 0 &&  self.mentionQuery == ""){ // If Space or delete the "@"
                 self.mentionQuery = ""
                 self.isMentioning = false
                 self.filtredMentions = mentions
@@ -255,8 +255,7 @@ extension EasyMention: UITextViewDelegate {
         
         for (startIndex, length) in mentionsIndexes {
             // Add attributes for the mention
-            attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.blue, range: NSMakeRange(startIndex, length))
-            attributedString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 13), range: NSMakeRange(startIndex, length))
+            attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.yellow, range: NSMakeRange(startIndex, length))
         }
         self.attributedText = attributedString
         
